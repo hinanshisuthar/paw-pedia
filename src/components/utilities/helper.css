@@ -1,0 +1,20 @@
+:root {
+    --background-color: #18181b;
+    --light-grey: #c0c0c06e;
+    --light-grey-hover: #7070704f;
+    --box-shadow-light: rgba(51, 51, 51, 0.25) 0px 6px 12px -2px, rgba(59, 59, 59, 0.3) 0px 3px 7px -3px;
+}
+
+.font, div {
+    color: #ffffff;
+}
+
+.flex-row-sb-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon {
+    color: #BE123C;
+}
