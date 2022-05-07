@@ -1,0 +1,6 @@
+@import url('/src/components/utilities/helper.css');
+
+.side-option-div:hover {
+    background-color: var(--light-grey-hover);
+    cursor: pointer;
+}
