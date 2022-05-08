@@ -2,5 +2,4 @@
 
 .side-option-div:hover {
     background-color: var(--light-grey-hover);
-    cursor: pointer;
 }
