@@ -1,0 +1,17 @@
+@import url(../../../components/utilities/helper.css);
+
+.video-minor-details {
+    width: 100%;
+}
+
+.video-details {
+    gap: 0.5rem;
+}
+
+.video-card {
+    border-radius: var(--size-5);
+    background-color: var(--background-color);
+    height: 18rem;
+    width: 17rem;
+    box-shadow: var(--box-shadow-light-2);
+}
