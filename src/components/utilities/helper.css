@@ -2,11 +2,14 @@
     --background-color: #18181b;
     --light-grey: #c0c0c06e;
     --light-grey-hover: #7070704f;
+    --primary-pink: #BE123C;
+    --font-white: #f1f1f1;
     --box-shadow-light: rgba(51, 51, 51, 0.25) 0px 6px 12px -2px, rgba(59, 59, 59, 0.3) 0px 3px 7px -3px;
+    --box-shadow-light-2: rgba(39, 39, 39, 0.16) 0px 3px 6px, rgba(46, 45, 45, 0.23) 0px 3px 6px;
 }
 
 .font, div {
-    color: #ffffff;
+    color: var(--font-white);
 }
 
 .flex-row-sb-start {
@@ -16,5 +19,21 @@
 }
 
 .icon {
-    color: #BE123C;
+    color: var(--primary-pink);
+}
+
+.aside-con {
+    display: none;
+}
+
+@media screen and (min-width: 747px) {
+    .aside-con {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 832px) {
+    .aside-con {
+        display: none;
+    }
 }

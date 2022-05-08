@@ -1,0 +1,12 @@
+@import url('/src/components/utilities/helper.css');
+
+.chips {
+    border-radius: var(--size-15);
+    border: 1px solid var(--primary-pink);
+    color: var(--font-white);
+    padding: 0.7rem;
+}
+
+.chips:hover {
+    background-color: var(--primary-pink);
+}
