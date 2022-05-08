@@ -36,7 +36,7 @@ const DataProvider = ({ children }) => {
 
   return (
     <DataContext.Provider
-      value={{ videos: state.videos, category: state.category }}
+      value={{ videos: state.videos, category: state.category, dispatch }}
     >
       {children}
     </DataContext.Provider>
