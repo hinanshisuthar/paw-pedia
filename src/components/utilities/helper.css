@@ -1,6 +1,7 @@
 :root {
     --background-color: #18181b;
     --light-grey: #c0c0c06e;
+    --text-grey: #8a8989;
     --light-grey-hover: #7070704f;
     --primary-pink: #BE123C;
     --font-white: #f1f1f1;
@@ -24,6 +25,10 @@
 
 .aside-con {
     display: none;
+}
+
+.text-grey {
+    color: var(--text-grey);
 }
 
 @media screen and (min-width: 747px) {
