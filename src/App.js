@@ -7,6 +7,10 @@ import { Playlist } from "./pages/Playlist/Playlist";
 import { History } from "./pages/History/History";
 import { LikedVideos } from "./pages/Liked Videos/LikedVideos";
 import { Aside } from "./components/Aside/Aside";
+import { Login } from "./pages/Authentication/Login";
+import { Signup } from "./pages/Authentication/Signup";
+import MockAPI from "./components/Mockman";
+import { Profile } from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/history" element={<History />} />
           <Route path="/liked" element={<LikedVideos />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/mock" element={<MockAPI />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </div>
