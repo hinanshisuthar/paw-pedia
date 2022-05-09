@@ -12,15 +12,20 @@ import { Signup } from "./pages/Authentication/Signup";
 import MockAPI from "./components/Mockman";
 import { Profile } from "./pages/Profile/Profile";
 import { RequiresAuth } from "./components/RequiresAuth";
+import { LandingPage } from "./pages/Landing/LandingPage";
+import { useData } from "./context/data-context";
 
 function App() {
+  const { sideMenu } = useData();
+
   return (
     <div className="App">
       <Navbar />
-      <div className="grid grid-20-80">
-        <Aside />
+      <div className={sideMenu ? "grid grid-20-80" : ""}>
+        {sideMenu && <Aside />}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
           <Route
             path="/watchlater"
             element={

@@ -1,10 +1,14 @@
 import { useAuth } from "../../context/auth-context";
 import "../../components/utilities/helper.css";
 import { useNavigate } from "react-router-dom";
+import { useData } from "../../context/data-context";
+import { useEffect } from "react";
 
 const Profile = () => {
   const { token, setToken, user, setUser } = useAuth();
   const { firstName, lastName, email } = user;
+  const { sideMenu, setSideMenu } = useData();
+  useEffect(() => setSideMenu(true), [sideMenu]);
   const navigate = useNavigate();
 
   const logoutHandler = () => {

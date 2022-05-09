@@ -1,8 +1,10 @@
 import { useData } from "../../context/data-context";
 import { VideoCard } from "../Home/components/VIdeoCard";
+import { useEffect } from "react";
 
 const Watchlist = () => {
-  const { videos } = useData();
+  const { videos, sideMenu, setSideMenu } = useData();
+  useEffect(() => setSideMenu(true), [sideMenu]);
 
   const watchLaterList = videos.filter((video) => video.inWatchlater);
   return (
