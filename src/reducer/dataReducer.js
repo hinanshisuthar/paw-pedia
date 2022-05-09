@@ -14,6 +14,7 @@ const dataReducer = (state, { type, payload }) => {
           ...payload.map((video) => ({
             ...video,
             inWatchlater: false,
+            inLiked: false,
           })),
         ],
       };
@@ -32,6 +33,14 @@ const dataReducer = (state, { type, payload }) => {
         videos: state.videos.map((video) => ({
           ...video,
           inWatchlater: payload.some((item) => item._id === video._id),
+        })),
+      };
+      case "ADD_TO_LIKES":
+      return {
+        ...state,
+        videos: state.videos.map((video) => ({
+          ...video,
+          inLiked: payload.some((item) => item._id === video._id),
         })),
       };
     default:
