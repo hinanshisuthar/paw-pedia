@@ -29,9 +29,16 @@ function App() {
               </RequiresAuth>
             }
           />
+          <Route
+            path="/liked"
+            element={
+              <RequiresAuth>
+                <LikedVideos />
+              </RequiresAuth>
+            }
+          />
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/history" element={<History />} />
-          <Route path="/liked" element={<LikedVideos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/mock" element={<MockAPI />} />
