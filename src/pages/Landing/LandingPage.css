@@ -1,0 +1,17 @@
+.hero-img-con {
+    margin: 4rem; 
+    width: 100%;
+}
+
+.hero-img {
+    padding: 0 15rem;
+}
+
+.cat-div {
+    background-color: var(--light-grey);
+}
+
+.cat-img {
+    width: 15rem;
+    height: 11rem;
+}
