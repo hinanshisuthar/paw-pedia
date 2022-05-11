@@ -92,6 +92,24 @@ a {
     height: 100%;
 }
 
+.modal-con {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999;
+    background-color: var(--primary-pink-modal);
+}
+
+.modal-wrapper {
+    background-color: var(--background-color);
+    position: absolute;
+    top: 50rem;
+    left: 10%;
+    width: 80%;
+    border-radius: var(--size-2);
+}
+
 /* scrollbar */
 
 /* ===== Scrollbar CSS ===== */
