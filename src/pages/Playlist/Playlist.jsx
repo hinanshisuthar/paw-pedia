@@ -2,8 +2,9 @@ import { useData } from "../../context/data-context";
 import { PlaylistFolder } from "./components/PlaylistFolder";
 
 const Playlist = () => {
-  const { playlist } = useData();
-
+  const { playlist, sideMenu, setSideMenu } = useData();
+  useEffect(() => setSideMenu(true), [sideMenu]);
+  
   return (
     <div>
       <h3>My playlists {playlist.length}</h3>
