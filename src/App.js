@@ -51,7 +51,14 @@ function App() {
               </RequiresAuth>
             }
           />
-          <Route path="/playlist" element={<Playlist />} />
+          <Route
+            path="/playlist"
+            element={
+              <RequiresAuth>
+                <Playlist />
+              </RequiresAuth>
+            }
+          />
           <Route path="/history" element={<History />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

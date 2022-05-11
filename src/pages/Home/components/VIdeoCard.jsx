@@ -56,6 +56,8 @@ const VideoCard = ({ video }) => {
     if (token) {
       setPlaylistMenu(true);
       setPlaylistData(video);
+    } else {
+      navigate("/login");
     }
   };
 
