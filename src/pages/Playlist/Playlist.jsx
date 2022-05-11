@@ -1,5 +1,6 @@
 import { useData } from "../../context/data-context";
 import { PlaylistFolder } from "./components/PlaylistFolder";
+import { useEffect } from "react";
 
 const Playlist = () => {
   const { playlist, sideMenu, setSideMenu } = useData();
