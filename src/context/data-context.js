@@ -8,6 +8,8 @@ const DataContext = createContext();
 const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
   const [sideMenu, setSideMenu] = useState(false);
+  const [playlistMenu, setPlaylistMenu] = useState(false);
+  const [playlistData, setPlaylistData] = useState({})
 
   useEffect(() => {
     (async () => {
@@ -37,7 +39,18 @@ const DataProvider = ({ children }) => {
 
   return (
     <DataContext.Provider
-      value={{ videos: state.videos, category: state.category, dispatch, sideMenu, setSideMenu }}
+      value={{
+        videos: state.videos,
+        category: state.category,
+        dispatch,
+        sideMenu,
+        setSideMenu,
+        playlistMenu,
+        setPlaylistMenu,
+        playlist: state.playlist,
+        playlistData,
+        setPlaylistData
+      }}
     >
       {children}
     </DataContext.Provider>

@@ -14,6 +14,7 @@ import { Profile } from "./pages/Profile/Profile";
 import { RequiresAuth } from "./components/RequiresAuth";
 import { LandingPage } from "./pages/Landing/LandingPage";
 import { useData } from "./context/data-context";
+import { PlaylistVideos } from "./pages/Playlist/components/PlaylistVideos";
 
 function App() {
   const { sideMenu } = useData();
@@ -39,6 +40,14 @@ function App() {
             element={
               <RequiresAuth>
                 <LikedVideos />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="/playlist/:playListId"
+            element={
+              <RequiresAuth>
+                <PlaylistVideos />
               </RequiresAuth>
             }
           />
