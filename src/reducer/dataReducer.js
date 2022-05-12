@@ -16,6 +16,7 @@ const dataReducer = (state, { type, payload }) => {
             ...video,
             inWatchlater: false,
             inLiked: false,
+            inHistory: false,
           })),
         ],
       };
@@ -42,6 +43,14 @@ const dataReducer = (state, { type, payload }) => {
         videos: state.videos.map((video) => ({
           ...video,
           inLiked: payload.some((item) => item._id === video._id),
+        })),
+      };
+    case "SET_HISTORY":
+      return {
+        ...state,
+        videos: state.videos.map((video) => ({
+          ...video,
+          inHistory: payload.some((item) => item._id === video._id),
         })),
       };
     case "SET_PLAYLIST":
