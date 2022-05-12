@@ -9,7 +9,7 @@ const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
   const [sideMenu, setSideMenu] = useState(false);
   const [playlistMenu, setPlaylistMenu] = useState(false);
-  const [playlistData, setPlaylistData] = useState({})
+  const [playlistData, setPlaylistData] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -49,7 +49,9 @@ const DataProvider = ({ children }) => {
         setPlaylistMenu,
         playlist: state.playlist,
         playlistData,
-        setPlaylistData
+        setPlaylistData,
+        search: state.search,
+        categorizeBy: state.categorizeBy,
       }}
     >
       {children}
