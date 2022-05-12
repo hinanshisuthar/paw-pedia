@@ -60,7 +60,14 @@ function App() {
               </RequiresAuth>
             }
           />
-          <Route path="/history" element={<History />} />
+          <Route
+            path="/history"
+            element={
+              <RequiresAuth>
+                <History />
+              </RequiresAuth>
+            }
+          />
           <Route path="/video/:videoId" element={<SingleVideoPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
