@@ -26,7 +26,6 @@ function App() {
           <Route path="/liked" element={<LikedVideos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/mock" element={<MockAPI />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>

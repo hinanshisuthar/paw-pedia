@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { logIn } from "../services/logIn";
 import { signUp } from "../services/signUp";
 
@@ -9,6 +10,7 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorageToken?.token);
   const localStorageUser = JSON.parse(localStorage.getItem("user"));
   const [user, setUser] = useState(localStorageUser?.user);
+  const navigate = useNavigate();
 
   const signUpUser = async (email, password, firstName, lastName) => {
     try {
@@ -21,6 +23,7 @@ const AuthProvider = ({ children }) => {
         setToken(encodedToken);
         localStorage.setItem("user", JSON.stringify({ user: createdUser }));
         setUser(createdUser);
+        navigate("/");
       }
     } catch (error) {
       console.log("Error in signing user", error);
@@ -42,6 +45,7 @@ const AuthProvider = ({ children }) => {
           setToken(encodedToken);
           localStorage.setItem("user", JSON.stringify({ user: foundUser }));
           setUser(foundUser);
+          navigate("/");
         }
       } catch (error) {
         console.log("Error in logging user", error);
