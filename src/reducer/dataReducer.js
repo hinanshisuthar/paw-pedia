@@ -4,8 +4,6 @@ const initialState = {
   videos: [],
   category: [],
   playlist: [],
-  categorizeBy: "",
-  search: "",
 };
 
 const dataReducer = (state, { type, payload }) => {
@@ -66,27 +64,6 @@ const dataReducer = (state, { type, payload }) => {
         playlist: state.playlist.map((list) =>
           list._id === payload._id ? payload : list
         ),
-      };
-    case "FILTER_CATEGORY":
-      return {
-        ...state,
-        categorizeBy: payload,
-        category: state.category.map((cat) =>
-          cat.categoryName === payload
-            ? {
-                ...cat,
-                isActive: true,
-              }
-            : {
-                ...cat,
-                isActive: false,
-              }
-        ),
-      };
-    case "SEARCH":
-      return {
-        ...state,
-        search: payload,
       };
     default:
       return state;

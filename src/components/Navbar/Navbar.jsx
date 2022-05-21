@@ -13,18 +13,11 @@ import {
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
-import { useData } from "../../context/data-context";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
-  const { token } = useAuth();
-  const { dispatch, search } = useData();
-
-  const searchHandler = (e) => {
-    navigate('/home')
-    dispatch({ type: "SEARCH", payload: e.target.value });
-  };
+  const {token} = useAuth();
 
   return (
     <div className="p-1 nav-div">
@@ -34,10 +27,7 @@ const Navbar = () => {
           className="icon mr-sm font menu-icon"
           onClick={() => setMenu(!menu)}
         />
-        <div
-          className="responsive-img-container flex-row-sb logo-div mr-1"
-          onClick={() => navigate("/")}
-        >
+        <div className="responsive-img-container flex-row-sb logo-div mr-1" onClick={() => navigate("/")}>
           <img
             src="../assets/paw-pedia-logo.svg"
             alt="paw-pedia-logo"
@@ -51,8 +41,6 @@ const Navbar = () => {
             type="text"
             className="search-box text-rg"
             placeholder="Search"
-            value={search}
-            onChange={searchHandler}
           />
         </div>
         <div className="flex-row-sb ml-auto">
@@ -72,8 +60,6 @@ const Navbar = () => {
           type="text"
           className="search-box text-rg"
           placeholder="Search"
-          value={search}
-          onChange={searchHandler}
         />
       </div>
       {menu && (
