@@ -15,6 +15,7 @@ import { RequiresAuth } from "./components/RequiresAuth";
 import { LandingPage } from "./pages/Landing/LandingPage";
 import { useData } from "./context/data-context";
 import { PlaylistVideos } from "./pages/Playlist/components/PlaylistVideos";
+import { SingleVideoPage } from "./pages/single video page/SingleVideoPage";
 
 function App() {
   const { sideMenu } = useData();
@@ -60,6 +61,7 @@ function App() {
             }
           />
           <Route path="/history" element={<History />} />
+          <Route path="/video/:videoId" element={<SingleVideoPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />

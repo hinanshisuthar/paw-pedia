@@ -1,0 +1,11 @@
+.single-video-con {
+    height: 80vh;
+}
+
+.video-card{
+    width: 15rem;
+}
+
+.similar-videos {
+    gap: 1rem;
+}

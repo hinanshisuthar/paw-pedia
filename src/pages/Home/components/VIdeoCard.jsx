@@ -61,12 +61,17 @@ const VideoCard = ({ video }) => {
     }
   };
 
+  const singleVideoHandler = () => {
+    navigate(`/video/${_id}`);
+  }
+
   return (
     <div className="responsive-img-container video-card">
       <img
         src={`https://i.ytimg.com/vi/${_id}/maxresdefault.jpg`}
         alt={`${title}`}
         className="img-responsive"
+        onClick={() => singleVideoHandler()}
       />
       <div className="flex-row-sb">
         <div className="p-1 flex-col-sb-start video-details">
