@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
       {menu && (
         <div className="aside-con-responsive">
-          <Link to="/">
+          <Link to="/home">
             <div className="flex-row-sb-start p-1 side-option-div">
               <AiFillHome size={23} className="icon m-sm" />
               <h4 className="text-regular p-sm">Home</h4>

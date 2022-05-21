@@ -2,9 +2,11 @@ import { Categories } from "../../components/Categories/Categories";
 import "./Home.css";
 import { VideoCard } from "./components/VIdeoCard";
 import { useData } from "../../context/data-context";
+import { useEffect } from "react";
 
 const Home = () => {
-  const { videos, category } = useData();
+  const { videos, sideMenu, setSideMenu } = useData();
+  useEffect(() => setSideMenu(true), [sideMenu]);
 
   return (
     <div className="video-listing">

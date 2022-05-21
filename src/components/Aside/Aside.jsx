@@ -12,7 +12,7 @@ const Aside = () => {
   return (
     <div className="aside-con flex-col-sb">
       <NavLink
-        to="/"
+        to="/home"
         style={(isActive) => ({
           backgroundColor: isActive ? "var(--light-grey)" : "",
         })}
