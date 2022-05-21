@@ -70,6 +70,13 @@ a {
     color: var(--font-white);
 }
 
+.video-card-con {
+    width: 95%;
+    grid-gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
 @media screen and (min-width: 747px) {
     .aside-con {
         display: block;

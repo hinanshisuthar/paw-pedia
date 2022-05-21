@@ -11,6 +11,7 @@ import { Login } from "./pages/Authentication/Login";
 import { Signup } from "./pages/Authentication/Signup";
 import MockAPI from "./components/Mockman";
 import { Profile } from "./pages/Profile/Profile";
+import { RequiresAuth } from "./components/RequiresAuth";
 
 function App() {
   return (
@@ -20,7 +21,14 @@ function App() {
         <Aside />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/watchlater" element={<Watchlist />} />
+          <Route
+            path="/watchlater"
+            element={
+              <RequiresAuth>
+                <Watchlist />
+              </RequiresAuth>
+            }
+          />
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/history" element={<History />} />
           <Route path="/liked" element={<LikedVideos />} />
