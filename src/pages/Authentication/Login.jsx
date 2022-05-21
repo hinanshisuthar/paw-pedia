@@ -11,16 +11,10 @@ const Login = () => {
     password: "",
   });
 
-  useEffect(() => {
-    (async () => {
-      logInUser(loginCredentials.email, loginCredentials.password);
-    })();
-  }, [loginCredentials.email, loginCredentials.password]);
-
-  if(token) {
-      setTimeout(() => {
-        console.log("Logged In")
-      }, 1000)
+  if (token) {
+    setTimeout(() => {
+      console.log("Logged In"); //convert to toast afterwards
+    }, 1000);
   }
  
   const guestLoginHandler = () => {
@@ -69,7 +63,12 @@ const Login = () => {
         </div>
         <div>
           <div className="flex-col-sb btn-con">
-            <button className="btn btn-secondary text-regular text-capitalize m-sm width-100">
+            <button
+              className="btn btn-secondary text-regular text-capitalize m-sm width-100"
+              onClick={() =>
+                logInUser(loginCredentials.email, loginCredentials.password)
+              }
+            >
               Login
             </button>
             <button

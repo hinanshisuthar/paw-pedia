@@ -16,6 +16,8 @@ const Categories = () => {
             dispatch({ type: "FILTER_CATEGORY", payload: categoryName })
           }
         >
+      {category.map(({ _id, categoryName }) => (
+        <button key={_id} className="text-regular chips m-sm p-sm">
           {categoryName}
         </button>
       ))}
