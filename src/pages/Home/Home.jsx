@@ -4,10 +4,15 @@ import { VideoCard } from "./components/VIdeoCard";
 import { useData } from "../../context/data-context";
 import { useEffect } from "react";
 import { PlaylistModal } from "../../components/Modal/PlaylistModal";
+import { categoryProducts, searchVideos } from "../../services/filterService";
 
 const Home = () => {
-  const { videos, sideMenu, setSideMenu, playlistMenu } = useData();
+  const { videos, sideMenu, setSideMenu, playlistMenu, search, categorizeBy } =
+    useData();
   useEffect(() => setSideMenu(true), [sideMenu]);
+
+  const getCategorizedVideos = categoryProducts(videos, categorizeBy);
+  const getSearchedVideos = searchVideos(getCategorizedVideos, search);
 
   return (
     <>
@@ -16,7 +21,7 @@ const Home = () => {
           <Categories />
         </div>
         <div className="video-card-con p-1 ml-sm">
-          {videos.map((video) => (
+          {getSearchedVideos.map((video) => (
             <VideoCard key={video._id} video={video} />
           ))}
         </div>
