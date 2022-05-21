@@ -17,9 +17,10 @@ import {
   addToLiked,
   removeFromLiked,
 } from "../../../services/likedVideoService.jsx";
+import { addToHistory } from "../../../services/historyService.js";
 
 const VideoCard = ({ video }) => {
-  const { _id, title, creator, date, views, inWatchlater, inLiked } = video;
+  const { _id, title, creator, date, views, inWatchlater, inLiked, inHistory } = video;
   const { dispatch, playlistMenu, setPlaylistMenu, setPlaylistData } =
     useData();
   const { token } = useAuth();
@@ -63,7 +64,8 @@ const VideoCard = ({ video }) => {
 
   const singleVideoHandler = () => {
     navigate(`/video/${_id}`);
-  }
+    token && !inHistory && addToHistory(dispatch, video, token);
+  };
 
   return (
     <div className="responsive-img-container video-card">
