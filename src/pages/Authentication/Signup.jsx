@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../context/auth-context";
 import "./Auth.css";
-import { useEffect } from "react";
 
 const Signup = () => {
   const { token, signUpUser } = useAuth();
@@ -47,9 +46,10 @@ const Signup = () => {
       <div className="auth-con signup-con p-1 flex-col-sb">
         <h1>Sign Up</h1>
         <div className="credentials-con flex-col-sb">
-          <label htmlFor="" className="width-100">
+          <label htmlFor="input" className="width-100">
             Firstname
             <input
+              id="input"
               type="text"
               name="firstName"
               className="input-box p-sm my-sm"

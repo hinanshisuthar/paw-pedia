@@ -1,0 +1,28 @@
+.chip {
+    color: var(--red-500);
+    border: 1px solid var(--red-500);
+    border-radius: var(--size-2);
+    background-color: var(--light-grey);
+    width: 100%;
+}
+
+.chip > label {
+    width: 70%;
+}
+
+.playlist-chk-box {
+    width: max-content;
+}
+
+.chip-active {
+    color: var(--font-white);
+    background-color: var(--primary-pink);
+}
+
+.chips-input {
+    border: 1px solid var(--primary-pink);
+}
+
+.chips-list {
+    flex-wrap: wrap;
+}

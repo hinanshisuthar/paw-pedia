@@ -44,9 +44,10 @@ const Login = () => {
               }
             />
           </label>
-          <label htmlFor="" className="width-100">
+          <label htmlFor="input" className="width-100">
             Password
             <input
+              id="input"
               type="password"
               className="input-box p-sm my-sm"
               placeholder="********"

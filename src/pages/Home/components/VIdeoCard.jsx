@@ -1,48 +1,65 @@
 import { useNavigate } from "react-router-dom";
 import {
-    AiFillLike,
+  AiFillLike,
   AiOutlineLike,
   MdOutlineWatchLater,
   MdWatchLater,
+  MdOutlinePlaylistAdd,
 } from "../../../components/utilities/icons.jsx";
 import { useAuth } from "../../../context/auth-context.js";
 import { useData } from "../../../context/data-context.js";
 import "./VideoCard.css";
-import { addToWatchLater, removeFromWatchLater } from "../../../services/watchlaterService.jsx";
-import { addToLiked, removeFromLiked } from "../../../services/likedVideoService.jsx";
+import {
+  addToWatchLater,
+  removeFromWatchLater,
+} from "../../../services/watchlaterService.jsx";
+import {
+  addToLiked,
+  removeFromLiked,
+} from "../../../services/likedVideoService.jsx";
 
 const VideoCard = ({ video }) => {
   const { _id, title, creator, date, views, inWatchlater, inLiked } = video;
-  const { dispatch } = useData();
+  const { dispatch, playlistMenu, setPlaylistMenu, setPlaylistData } =
+    useData();
   const { token } = useAuth();
   const navigate = useNavigate();
   const modifiedTitle = title[0].toUpperCase() + title.slice(1).toLowerCase();
 
   const watchlaterHandler = () => {
-      if(token) {
-          if(inWatchlater) {
-              removeFromWatchLater(dispatch, _id, token)
-          } else {
-              addToWatchLater(dispatch, video, token)
-              console.log('added to watchlist')
-          }
+    if (token) {
+      if (inWatchlater) {
+        removeFromWatchLater(dispatch, _id, token);
       } else {
-          navigate('/login')
+        addToWatchLater(dispatch, video, token);
+        console.log("added to watchlist");
       }
-  }
+    } else {
+      navigate("/login");
+    }
+  };
 
   const likeHandler = () => {
-    if(token) {
-        if(inLiked) {
-            removeFromLiked(dispatch, _id, token)
-        } else {
-            addToLiked(dispatch, video, token)
-            console.log('added to liked')
-        }
+    if (token) {
+      if (inLiked) {
+        removeFromLiked(dispatch, _id, token);
+      } else {
+        addToLiked(dispatch, video, token);
+        console.log("added to liked");
+      }
     } else {
-        navigate('/login')
+      navigate("/login");
     }
-}
+  };
+
+  const playlistHandler = () => {
+    if (token) {
+      setPlaylistMenu(true);
+      setPlaylistData(video);
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <div className="responsive-img-container video-card">
@@ -69,6 +86,9 @@ const VideoCard = ({ video }) => {
               ) : (
                 <AiOutlineLike className="option-icon icon" size={22} />
               )}
+            </span>
+            <span onClick={playlistHandler}>
+              <MdOutlinePlaylistAdd className="option-icon icon" size={22} />
             </span>
           </div>
           <div className="flex-row-sb text-grey video-minor-details">

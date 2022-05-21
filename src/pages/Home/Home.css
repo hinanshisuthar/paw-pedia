@@ -14,10 +14,31 @@
     border-radius: var(--size-5) var(--size-5) 0 0;
 }
 
+.modal-con {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999;
+    background-color: var(--primary-pink-modal);
+}
+
+.modal-wrapper {
+    background-color: var(--background-color);
+    position: absolute;
+    top: 50rem;
+    left: 10%;
+    width: 80%;
+    border-radius: var(--size-2);
+}
+
 @media screen and (min-width: 623px) {
     .video-card-con {
         place-items: center;
         width: 100vw;
+    }
+    .modal-wrapper {
+        width: 45%;
     }
 }
 
@@ -27,5 +48,10 @@
     }
     .video-card-con {
         width: 95%;
+    }
+    .modal-wrapper {
+    top: 40%;
+    left: 30%;
+        width: 40%;
     }
 }

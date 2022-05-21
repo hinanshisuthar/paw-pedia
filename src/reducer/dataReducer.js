@@ -3,6 +3,7 @@ import { videos } from "../backend/db/videos";
 const initialState = {
   videos: [],
   category: [],
+  playlist: [],
 };
 
 const dataReducer = (state, { type, payload }) => {
@@ -35,13 +36,25 @@ const dataReducer = (state, { type, payload }) => {
           inWatchlater: payload.some((item) => item._id === video._id),
         })),
       };
-      case "ADD_TO_LIKES":
+    case "ADD_TO_LIKES":
       return {
         ...state,
         videos: state.videos.map((video) => ({
           ...video,
           inLiked: payload.some((item) => item._id === video._id),
         })),
+      };
+    case "SET_PLAYLIST":
+      return {
+        ...state,
+        playlist: payload,
+      };
+    case "PLAYLIST_VIDEO":
+      return {
+        ...state,
+        playlist: state.playlist.map((list) =>
+          list._id === payload._id ? payload : list
+        ),
       };
     default:
       return state;

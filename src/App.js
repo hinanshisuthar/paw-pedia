@@ -14,6 +14,7 @@ import { Profile } from "./pages/Profile/Profile";
 import { RequiresAuth } from "./components/RequiresAuth";
 import { LandingPage } from "./pages/Landing/LandingPage";
 import { useData } from "./context/data-context";
+import { PlaylistVideos } from "./pages/Playlist/components/PlaylistVideos";
 
 function App() {
   const { sideMenu } = useData();
@@ -42,7 +43,22 @@ function App() {
               </RequiresAuth>
             }
           />
-          <Route path="/playlist" element={<Playlist />} />
+          <Route
+            path="/playlist/:playListId"
+            element={
+              <RequiresAuth>
+                <PlaylistVideos />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="/playlist"
+            element={
+              <RequiresAuth>
+                <Playlist />
+              </RequiresAuth>
+            }
+          />
           <Route path="/history" element={<History />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
