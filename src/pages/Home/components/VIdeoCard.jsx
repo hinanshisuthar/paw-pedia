@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import {
+    AiFillLike,
+  AiOutlineLike,
   MdOutlineWatchLater,
   MdWatchLater,
 } from "../../../components/utilities/icons.jsx";
@@ -7,10 +9,11 @@ import { useAuth } from "../../../context/auth-context.js";
 import { useData } from "../../../context/data-context.js";
 import "./VideoCard.css";
 import { addToWatchLater, removeFromWatchLater } from "../../../services/watchlaterService.jsx";
+import { addToLiked, removeFromLiked } from "../../../services/likedVideoService.jsx";
 
 const VideoCard = ({ video }) => {
-  const { _id, title, creator, date, views, inWatchlater } = video;
-  const { state, dispatch } = useData();
+  const { _id, title, creator, date, views, inWatchlater, inLiked } = video;
+  const { dispatch } = useData();
   const { token } = useAuth();
   const navigate = useNavigate();
   const modifiedTitle = title[0].toUpperCase() + title.slice(1).toLowerCase();
@@ -21,12 +24,25 @@ const VideoCard = ({ video }) => {
               removeFromWatchLater(dispatch, _id, token)
           } else {
               addToWatchLater(dispatch, video, token)
-              console.log('added')
+              console.log('added to watchlist')
           }
       } else {
           navigate('/login')
       }
   }
+
+  const likeHandler = () => {
+    if(token) {
+        if(inLiked) {
+            removeFromLiked(dispatch, _id, token)
+        } else {
+            addToLiked(dispatch, video, token)
+            console.log('added to liked')
+        }
+    } else {
+        navigate('/login')
+    }
+}
 
   return (
     <div className="responsive-img-container video-card">
@@ -45,6 +61,13 @@ const VideoCard = ({ video }) => {
                 <MdWatchLater className="option-icon icon" size={22} />
               ) : (
                 <MdOutlineWatchLater className="option-icon icon" size={22} />
+              )}
+            </span>
+            <span onClick={likeHandler}>
+              {inLiked ? (
+                <AiFillLike className="option-icon icon" size={22} />
+              ) : (
+                <AiOutlineLike className="option-icon icon" size={22} />
               )}
             </span>
           </div>
