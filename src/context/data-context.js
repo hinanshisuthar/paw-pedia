@@ -12,7 +12,7 @@ const DataProvider = ({ children }) => {
   const [playlistData, setPlaylistData] = useState({});
 
   useEffect(() => {
-    (async () => {
+    const setVideos = async () => {
       try {
         const {
           data: { videos },
@@ -21,11 +21,12 @@ const DataProvider = ({ children }) => {
       } catch (error) {
         console.log(error);
       }
-    })();
+    };
+    setVideos();
   }, []);
 
   useEffect(() => {
-    (async () => {
+    const setCategories = async () => {
       try {
         const {
           data: { categories },
@@ -34,7 +35,8 @@ const DataProvider = ({ children }) => {
       } catch (error) {
         console.log(error);
       }
-    })();
+    };
+    setCategories();
   }, []);
 
   return (
