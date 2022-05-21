@@ -4,6 +4,7 @@
     --text-grey: #8a8989;
     --light-grey-hover: #7070704f;
     --primary-pink: #BE123C;
+    --primary-pink-hover: #960b2e;
     --font-white: #f1f1f1;
     --box-shadow-light: rgba(51, 51, 51, 0.25) 0px 6px 12px -2px, rgba(59, 59, 59, 0.3) 0px 3px 7px -3px;
     --box-shadow-light-2: rgba(39, 39, 39, 0.16) 0px 3px 6px, rgba(46, 45, 45, 0.23) 0px 3px 6px;
@@ -21,6 +22,7 @@
 
 .icon {
     color: var(--primary-pink);
+    cursor: pointer;
 }
 
 .aside-con {
@@ -29,6 +31,43 @@
 
 .text-grey {
     color: var(--text-grey);
+}
+
+input {
+    border: transparent;
+}
+
+input:focus-visible {
+    outline: transparent;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.btn {
+    color: var(--font-white);
+    border-radius: var(--size-2);
+}
+
+.btn:hover {
+    background-color: var(--primary-pink-hover);
+    color: var(--font-white);
+    border: 2px solid var(--primary-pink-hover);
+}
+
+.btn-primary {
+    background-color: var(--primary-pink);
+    border: 2px solid var(--primary-pink);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-pink);
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-white);
 }
 
 @media screen and (min-width: 747px) {

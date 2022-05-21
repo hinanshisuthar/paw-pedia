@@ -1,0 +1,28 @@
+@import url(../../components/utilities/helper.css);
+
+.input-box {
+    background-color: var(--light-grey);
+    border-radius: var(--size-2);
+}
+
+.auth-con {
+    border: 2px solid var(--primary-pink);
+    width: 23rem;
+    border-radius: var(--size-2);
+}
+
+.login-con {
+    margin: 4rem;
+}
+
+.signup-con {
+    margin-top: 0.5rem;
+}
+
+.create-account:hover {
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.wide-con {
+    width: 27rem;
+}

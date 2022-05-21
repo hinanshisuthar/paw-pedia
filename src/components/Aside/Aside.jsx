@@ -13,7 +13,6 @@ const Aside = () => {
     <div className="aside-con flex-col-sb">
       <NavLink
         to="/"
-        exact
         style={(isActive) => ({
           backgroundColor: isActive ? "var(--light-grey)" : "",
         })}
@@ -25,7 +24,6 @@ const Aside = () => {
       </NavLink>
       <NavLink
         to="/playlist"
-        exact
         style={(isActive) => ({
           backgroundColor: isActive ? "var(--light-grey)" : "",
         })}
@@ -37,7 +35,6 @@ const Aside = () => {
       </NavLink>
       <NavLink
         to="/history"
-        exact
         style={(isActive) => ({
           backgroundColor: isActive ? "var(--light-grey)" : "",
         })}
@@ -49,7 +46,6 @@ const Aside = () => {
       </NavLink>
       <NavLink
         to="/liked"
-        exact
         style={(isActive) => ({
           backgroundColor: isActive ? "var(--light-grey)" : "",
         })}
@@ -61,7 +57,6 @@ const Aside = () => {
       </NavLink>
       <NavLink
         to="/watchlater"
-        exact
         style={(isActive) => ({
           backgroundColor: isActive ? "var(--light-grey)" : "",
         })}
