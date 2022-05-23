@@ -1,6 +1,6 @@
 <h1 align = "center">
   <br />
-  <a href="https://native-paws.netlify.app/"><img src="https://res.cloudinary.com/do5ez3xws/image/upload/v1647500585/home/logo_bbmksz.webp" alt="NTIVE PAWS LOGO" width="200"></a>
+  <a href="https://native-paws.netlify.app/"><img src="/public/assets/paw-pedia-logo.svg" alt="PAW PEDIA LOGO" width="200"></a>
   <br />
   PAW PEDIA
   <br />
