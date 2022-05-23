@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
         setToken(encodedToken);
         localStorage.setItem("user", JSON.stringify({ user: createdUser }));
         setUser(createdUser);
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       console.log("Error in signing user", error);
@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
           setToken(encodedToken);
           localStorage.setItem("user", JSON.stringify({ user: foundUser }));
           setUser(foundUser);
-          navigate("/");
+          navigate("/home");
         }
       } catch (error) {
         console.log("Error in logging user", error);

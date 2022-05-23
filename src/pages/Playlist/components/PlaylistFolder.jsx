@@ -23,14 +23,18 @@ const PlaylistFolder = ({ folder }) => {
           />
           <div className="flex-col-sb-start py-sm">
             <h6 className="text-center">Name: {title}</h6>
-            <h6 className="text-center py-sm">Contains: {videos.length} videos</h6>
+            <h6 className="text-center py-sm">
+              Contains: {videos.length} videos
+            </h6>
             <div onClick={() => removePlaylist(dispatch, _id, token)}>
-              <BsFillTrashFill className="icon mx-sm" size={20}/>
+              <BsFillTrashFill className="icon mx-sm" size={20} />
             </div>
           </div>
         </div>
       ) : (
-        <p>{title} is empty</p>
+        <div className="empty-playlist">
+          <p>{title} is empty</p>
+        </div>
       )}
     </div>
   );

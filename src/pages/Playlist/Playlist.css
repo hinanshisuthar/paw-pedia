@@ -1,0 +1,5 @@
+@import url(../../components/utilities/helper.css);
+
+.empty-playlist {
+    background-color: var(--light-grey);
+}
