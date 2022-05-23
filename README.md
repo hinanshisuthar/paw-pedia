@@ -54,6 +54,7 @@ Go to [Paw Pedia](https://paw-pedia.netlify.app/) and enjoy watching the videos.
     - Log Out
 - Single product page
 - Dark mode
+- Responsive
 
 ## ** Built With**
 
